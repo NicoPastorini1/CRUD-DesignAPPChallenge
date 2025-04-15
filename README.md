@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Project Manager Dashboard
 
-## Getting Started
+Una aplicación web desarrollada con **React + TypeScript + Supabase** para gestionar tareas asignadas a diseñadores, pensada para distintos tipos de usuarios con permisos personalizados.
 
-First, run the development server:
+## 🚀 Descripción
+
+Este proyecto es un **CRUD de tareas** enfocado en la gestión de proyectos entre *Clientes*, *Project Managers* y *Diseñadores*. Cada rol tiene permisos distintos para visualizar, crear, asignar o modificar tareas.
+
+Incluye:
+- Autenticación de usuarios con Supabase.
+- Roles personalizados (Cliente, Project Manager, Diseñador).
+- CRUD de tareas con campos como título, descripción, diseñador asignado y archivos adjuntos.
+- Subida de archivos y almacenamiento del nombre en la base de datos.
+- Estilos modernos con `shadcn/ui` y `Tailwind CSS`.
+
+## 📦 Funcionalidades
+
+- 🔐 **Autenticación segura** vía Supabase.
+- 👤 **Roles**:
+  - Cliente: ve tareas.
+  - Project Manager: crea, edita y elimina tareas.
+  - Diseñador: visualiza tareas asignadas.
+- 📝 **Formulario CRUD** para agregar tareas.
+- 📁 **Carga de archivos adjuntos**.
+- 🎨 **Interfaz moderna y responsiva**.
+
+## 🛠️ Tecnologías
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Supabase](https://supabase.com/) (Base de datos, Auth y Storage)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Lucide Icons](https://lucide.dev/)
+
+## ⚙️ Instalación y uso
+
+1. Cloná el repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tu-usuario/tu-repo.git
+cd tu-repo
 ```
+2. Instalá las dependencias:
+```bash
+npm install
+```
+3. Configurá tus variables de entorno:
+```bash
+VITE_SUPABASE_URL= ''
+VITE_SUPABASE_ANON_KEY=''
+```
+4. Ejecutá la app:
+```bash
+npm run dev
+```
+🗂️ Estructura del proyecto
+```
+src/
+├─ components/
+│  └─ ui/                  # Componentes de interfaz (botones, inputs, etc)
+├─ dashboard/
+│  └─ crudform.tsx         # Formulario de gestión de tareas
+├─ lib/
+│  └─ supabase.ts          # Configuración de Supabase
+└─ App.tsx / main.tsx      # Entrada de la app
+```
+📌 Estado actual<br>
+✅ Proyecto funcional<br>
+🔜 Próximas mejoras:<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Subida de archivos a Supabase Storage. <br>
+Vista de tareas según el rol.<br>
+Agregar, eliminar y editar proyectos.<br>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
